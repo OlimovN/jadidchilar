@@ -1,0 +1,218 @@
+/* Umumiy fon va matn dizayni */
+.home {
+  background-color: #f4f4f9; /* Och rangdagi fon */
+  color: #333; /* Yengil qora matn */
+  font-family: 'Circular Std', sans-serif;
+  text-align: center;
+  padding: 50px 20px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 50px;
+  color: #2c3e50; /* To'q moviy rang */
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Jadidchilar ro'yxatining dizayni */
+.jadidchi-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 ustunli grid */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.jadidchi-item {
+  background: linear-gradient(135deg, #ff9f1c, #fbb034); /* Yengil rangli gradient fon */
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Yengil soya */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover effekti */
+.jadidchi-item:hover {
+  transform: translateY(-12px); /* Hoverda ko'tarilishi */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Kattaroq soya */
+}
+
+/* Linklarni dizayni */
+.jadidchi-link {
+  display: block;
+  padding: 30px;
+  font-size: 1.5rem;
+  color: #2c3e50; /* To'q moviy rang */
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hoverda rang o'zgarishi va animatsiya */
+.jadidchi-link:hover {
+  color: #fff; /* Pushti rang */
+  transform: scale(1.1); /* Link kattalashishi */
+}
+
+/* Jadidchi itemga hover paytida yon tomonda chiroyli effekt qo'shish */
+.jadidchi-item::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  width: 5px;
+  height: 50%;
+  background-color: #ff9f1c; /* Orange rang */
+  transform: translateY(-50%) scaleX(0);
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.jadidchi-item:hover::after {
+  transform: translateY(-50%) scaleX(1); /* Hoverda yon effekt kengayadi */
+}
+
+/* Hoverda "Link" fonining yirik animatsiyasi */
+.jadidchi-item:hover .jadidchi-link {
+  transform: scale(1.1);
+}
+
+/* Animatsiyalar uchun CSS */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobil qurilmalar uchun o'lchamni moslashtirish */
+@media (max-width: 1024px) {
+  .jadidchi-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 ustunli dizayn */
+  }
+}
+
+@media (max-width: 768px) {
+  .jadidchi-list {
+    grid-template-columns: 1fr; /* Bitta ustunli dizayn */
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+
+/* Logoning umumiy stili */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60px; /* Kichikroq logotip o'lchami */
+  height: 60px; /* Kichikroq logotip o'lchami */
+  cursor: pointer;
+  left: 80px;
+  position: absolute; /* Burchakda joylashishi uchun */
+  border-radius: 20px;
+  background-color: #f7a35e;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Soyalar qo‘shildi */
+}
+
+/* Hover effekti bilan logoni kattalashtirish */
+.logo:hover {
+  transform: scale(1.1);
+  background: radial-gradient(circle, #e0e7ff, #ffffff);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25); /* Hover holatidagi soyalar */
+}
+
+/* Chiziqlarning dastlabki holati */
+.line {
+  width: 40px;
+  height: 5px;
+  background-color: #6e0606;
+  margin: 5px 0;
+  border-radius: 4px;
+  transition: all 0.4s ease; /* Yumshoq o‘tish */
+}
+
+/* Kvadrat shaklga o‘tish va "N" harfini ko‘rsatish */
+.logo:hover .line {
+  position: absolute;
+  width: 80px;
+  height: 70px;
+  background-color: transparent;
+  border: 3px solid #333;
+  border-radius: 15px;
+}
+
+.logo:hover .line:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.logo:hover .line:nth-child(2) {
+  top: 0;
+  right: 0;
+}
+
+.logo:hover .line:nth-child(3) {
+  bottom: 0;
+  left: 0;
+}
+
+/* "N" harfini ko‘rsatish */
+.letter {
+  font-size: 40px;
+  font-weight: bold;
+  color: #e0480c;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.logo:hover .letter {
+  opacity: 1;
+}
+
+
+.nam {
+  position: fixed; /* Saytga o‘rnatilgan joyda qoladi */
+  bottom: 10px; /* Pastki burchakda joylashadi */
+  left: 10px; /* Chap burchakda joylashadi */
+  font-size: 3rem; /* Harf o‘lchami */
+  font-weight: 900; /* Matnning qalinligi */
+  color: rgb(207, 203, 203); /* Harflarning rangi oq */
+  text-transform: uppercase; /* Harflarni katta qilish */
+  letter-spacing: 3px; /* Harflar orasidagi masofa */
+  font-family: 'Arial', sans-serif; /* Harf uslubi */
+  background: none; /* Fonsiz */
+  z-index: 9999; /* Harflar eng ustunda bo‘lishi uchun */
+  padding: 0; /* Atrofdagi bo'sh joyni olib tashlash */
+}
+
+.nam::after {
+  content: 'Olimov Nurmuhammad'; /* Matn */
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(45deg, #ff6a00, #ee0979); /* Gradient fon */
+  -webkit-background-clip: text; /* Fonda gradientni faqat matn uchun ishlatish */
+  color: transparent; /* Matnni shaffof qilish */
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}

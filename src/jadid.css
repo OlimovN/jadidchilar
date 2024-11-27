@@ -1,0 +1,92 @@
+/* Umumiy konteyner */
+.jadidchi-details {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Jadidchi nomi */
+.jadidchi-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ecbc1e;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Slider */
+.jadidchi-slider {
+  margin-bottom: 40px;
+}
+.jadidchi-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-width: 300px; /* Kichikroq o'lcham */
+  margin: 0 auto; /* Markazlashtirish */
+}
+
+
+/* Biografiya va ta'rif bo'limlari */
+.jadidchi-content {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.jadidchi-content h2 {
+  font-size: 1.8rem;
+  color: #d8a311;
+  margin-top: 40px;
+  text-decoration: underline;
+}
+
+.jadidchi-content p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #d62424;
+}
+
+/* "Ma'lumot topilmadi" xabar */
+.not-found {
+  font-size: 1.5rem;
+  color: #e74c3c;
+  text-align: center;
+  padding: 50px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .jadidchi-name {
+    font-size: 2rem;
+  }
+
+  .jadidchi-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .jadidchi-content p {
+    font-size: 0.9rem;
+  }
+}
+
+.back {
+  cursor: pointer;
+  background-color: #c2a213;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.back:hover {
+  background-color: #45a049;
+}
