@@ -41,9 +41,6 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <div className="nam">
-        <p>Olimov Nurmuhammad</p>
-      </div>
     </div>
   );
 };

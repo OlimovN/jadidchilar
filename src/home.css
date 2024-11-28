@@ -20,9 +20,9 @@ h1 {
 /* Jadidchilar ro'yxatining dizayni */
 .jadidchi-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 ustunli grid */
+  grid-template-columns: repeat(1, 1fr); /* 3 ustunli grid */
   gap: 30px;
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
   padding-top: 40px;
 }
@@ -49,7 +49,7 @@ h1 {
   font-size: 1.5rem;
   color: #2c3e50; /* To'q moviy rang */
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 1.5px;
   position: relative;
   z-index: 1;
@@ -59,7 +59,7 @@ h1 {
 /* Hoverda rang o'zgarishi va animatsiya */
 .jadidchi-link:hover {
   color: #fff; /* Pushti rang */
-  transform: scale(1.1); /* Link kattalashishi */
+  transform: scale(1.3); /* Link kattalashishi */
 }
 
 /* Jadidchi itemga hover paytida yon tomonda chiroyli effekt qo'shish */
@@ -70,7 +70,7 @@ h1 {
   left: -5px;
   width: 5px;
   height: 50%;
-  background-color: #ff9f1c; /* Orange rang */
+  background-color: #7c4a04; /* Orange rang */
   transform: translateY(-50%) scaleX(0);
   transition: transform 0.3s ease;
   z-index: 0;
@@ -89,7 +89,7 @@ h1 {
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(-50px);
   }
   100% {
     opacity: 1;
@@ -112,21 +112,19 @@ h1 {
     font-size: 2rem;
   }
 }
-
-
 /* Logoning umumiy stili */
 .logo {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 60px; /* Kichikroq logotip o'lchami */
-  height: 60px; /* Kichikroq logotip o'lchami */
+  width: 60px;
+  height: 60px;
   cursor: pointer;
-  left: 80px;
-  position: absolute; /* Burchakda joylashishi uchun */
+  left: 20px;
+  position: absolute;
   border-radius: 20px;
-  background-color: #f7a35e;
+  background: linear-gradient(135deg, #ff9f1c, #fbb034); /* Yengil rangli gradient fon */
   transition: transform 0.3s ease, background-color 0.3s ease;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Soyalar qo‘shildi */
 }
@@ -138,24 +136,59 @@ h1 {
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25); /* Hover holatidagi soyalar */
 }
 
-/* Chiziqlarning dastlabki holati */
+/* Logoning responsiv o‘lchamlari */
+@media (max-width: 768px) {
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Harflar va chiziqlar uchun moslashtirish */
 .line {
   width: 40px;
   height: 5px;
-  background-color: #6e0606;
+  background-color: #2c3e50;
   margin: 5px 0;
   border-radius: 4px;
-  transition: all 0.4s ease; /* Yumshoq o‘tish */
+  transition: all 0.4s ease;
 }
 
-/* Kvadrat shaklga o‘tish va "N" harfini ko‘rsatish */
 .logo:hover .line {
   position: absolute;
   width: 80px;
   height: 70px;
   background-color: transparent;
-  border: 3px solid #333;
+  border: 3px solid #2c3e50;
   border-radius: 15px;
+}
+
+/* "N" harfi */
+.letter {
+  font-size: 40px;
+  font-weight: bold;
+  color: #ff9f1c;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.logo:hover .letter {
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .letter {
+    font-size: 30px;
+  }
+}
+.logo:hover .line {
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  background-color: transparent;
+  border: 3px solid #2c3e50;
+  border-radius: 20px;
 }
 
 .logo:hover .line:nth-child(1) {
@@ -173,46 +206,4 @@ h1 {
   left: 0;
 }
 
-/* "N" harfini ko‘rsatish */
-.letter {
-  font-size: 40px;
-  font-weight: bold;
-  color: #e0480c;
-  position: absolute;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.logo:hover .letter {
-  opacity: 1;
-}
-
-
-.nam {
-  position: fixed; /* Saytga o‘rnatilgan joyda qoladi */
-  bottom: 10px; /* Pastki burchakda joylashadi */
-  left: 10px; /* Chap burchakda joylashadi */
-  font-size: 3rem; /* Harf o‘lchami */
-  font-weight: 900; /* Matnning qalinligi */
-  color: rgb(207, 203, 203); /* Harflarning rangi oq */
-  text-transform: uppercase; /* Harflarni katta qilish */
-  letter-spacing: 3px; /* Harflar orasidagi masofa */
-  font-family: 'Arial', sans-serif; /* Harf uslubi */
-  background: none; /* Fonsiz */
-  z-index: 9999; /* Harflar eng ustunda bo‘lishi uchun */
-  padding: 0; /* Atrofdagi bo'sh joyni olib tashlash */
-}
-
-.nam::after {
-  content: 'Olimov Nurmuhammad'; /* Matn */
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: linear-gradient(45deg, #ff6a00, #ee0979); /* Gradient fon */
-  -webkit-background-clip: text; /* Fonda gradientni faqat matn uchun ishlatish */
-  color: transparent; /* Matnni shaffof qilish */
-  font-size: 3rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
+/* "N" harf
