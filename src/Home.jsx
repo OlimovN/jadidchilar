@@ -41,6 +41,11 @@ const Home = () => {
           </Link>
         </div>
       </div>
+      <div className="link">
+        <a href="https://uz.wikipedia.org/wiki/Jadidchilik">
+          Jadidlar haqida koproq malumot uchun bosing
+        </a>
+      </div>
     </div>
   );
 };

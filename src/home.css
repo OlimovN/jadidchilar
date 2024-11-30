@@ -156,8 +156,8 @@ h1 {
 
 .logo:hover .line {
   position: absolute;
-  width: 80px;
-  height: 70px;
+  width: 0px;
+  height: 0px;
   background-color: transparent;
   border: 3px solid #2c3e50;
   border-radius: 15px;
@@ -206,4 +206,19 @@ h1 {
   left: 0;
 }
 
-/* "N" harf
+.link {
+  padding: 75px;
+}
+
+a {
+   color: #ff9f1c;
+  text-decoration: none; /* Chiziqni olib tashlash */
+  font-size: 20px; /* Matn hajmi */
+  transition: color 0.5s ease; /* Animatsiya */
+}
+
+a:hover {
+  color: #e0350a; /* Qoramtir ko'k rang */
+    text-decoration: none; /* Chiziqni olib tashlash */
+
+}
